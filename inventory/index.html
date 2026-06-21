@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventory – Donna</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="header-left">
+        <a href="/donna" class="back-link">← Donna</a>
+        <h1>Inventory</h1>
+      </div>
+      <button id="add-btn">+ Add Item</button>
+    </header>
+
+    <div class="toolbar">
+      <div class="toolbar-left">
+        <select id="filter-category">
+          <option value="">All Categories</option>
+          <option value="Food & Pantry">Food & Pantry</option>
+          <option value="Medicine & First Aid">Medicine & First Aid</option>
+          <option value="Baby & Child Care">Baby & Child Care</option>
+          <option value="Beauty & Personal Care">Beauty & Personal Care</option>
+          <option value="Cleaning & Household">Cleaning & Household</option>
+          <option value="Safety">Safety</option>
+          <option value="Other">Other</option>
+        </select>
+        <select id="sort-by">
+          <option value="expiration_date">Sort by Date</option>
+          <option value="name">Sort by Name</option>
+          <option value="category">Sort by Category</option>
+          <option value="urgency">Sort by Urgency</option>
+        </select>
+      </div>
+      <div class="view-toggle">
+        <button class="view-btn active" id="list-view-btn" title="List view">☰</button>
+        <button class="view-btn" id="grid-view-btn" title="Grid view">⊞</button>
+      </div>
+    </div>
+
+    <main id="items-container" class="list-view">
+      <p class="empty-state">No items yet. Click "+ Add Item" to get started.</p>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <h2 id="modal-title">Add Item</h2>
+      <div class="form-group">
+        <label>Item Name</label>
+        <input type="text" id="input-name" placeholder="e.g. Children's Tylenol" />
+      </div>
+      <div class="form-group">
+        <label>Category</label>
+        <select id="input-category">
+          <option value="Food & Pantry">Food & Pantry</option>
+          <option value="Medicine & First Aid">Medicine & First Aid</option>
+          <option value="Baby & Child Care">Baby & Child Care</option>
+          <option value="Beauty & Personal Care">Beauty & Personal Care</option>
+          <option value="Cleaning & Household">Cleaning & Household</option>
+          <option value="Safety">Safety</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Expiration Date</label>
+        <select id="input-date-type">
+          <option value="exact">Exact date (MM/DD/YYYY)</option>
+          <option value="month">Month & year (MM/YYYY)</option>
+          <option value="fuzzy">Approximate (e.g. 6 months from now)</option>
+        </select>
+      </div>
+      <div class="form-group" id="date-exact">
+        <input type="date" id="input-date-exact" />
+      </div>
+      <div class="form-group hidden" id="date-month">
+        <input type="month" id="input-date-month" />
+      </div>
+      <div class="form-group hidden" id="date-fuzzy">
+        <select id="input-date-fuzzy">
+          <option value="7">1 week from now</option>
+          <option value="14">2 weeks from now</option>
+          <option value="30">1 month from now</option>
+          <option value="90">3 months from now</option>
+          <option value="180">6 months from now</option>
+          <option value="365">1 year from now</option>
+          <option value="730">2 years from now</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Remind me</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="3" /> 3 days before</label>
+          <label><input type="checkbox" value="7" /> 1 week before</label>
+          <label><input type="checkbox" value="14" /> 2 weeks before</label>
+          <label><input type="checkbox" value="30" /> 1 month before</label>
+          <label><input type="checkbox" value="90" /> 3 months before</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Notes (optional)</label>
+        <input type="text" id="input-notes" placeholder="e.g. top shelf of pantry" />
+      </div>
+      <div class="modal-actions">
+        <button id="modal-cancel">Cancel</button>
+        <button id="modal-save" class="primary">Save Item</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
