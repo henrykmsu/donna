@@ -110,6 +110,55 @@
       color: #9b9b96;
     }
 
+    .ryan-card {
+      background: #ffffff;
+      border: 0.5px solid rgba(0,0,0,0.12);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ryan-age-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .ryan-stat {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .ryan-number {
+      font-size: 36px;
+      font-weight: 600;
+      color: #1a1a18;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .ryan-unit {
+      font-size: 13px;
+      font-weight: 500;
+      color: #a0a09a;
+    }
+
+    .ryan-sep {
+      font-size: 20px;
+      font-weight: 300;
+      color: #e8e8e5;
+      line-height: 1;
+    }
+
+    .ryan-updated {
+      font-size: 11px;
+      color: #c0c0ba;
+    }
+
     .donna-footer {
       font-size: 12px;
       color: #9b9b96;
@@ -128,6 +177,23 @@
   </div>
 
   <div class="donna-body">
+    <div class="section-label">Widgets</div>
+    <div class="ryan-card">
+      <div class="section-label" style="margin-bottom:0; color:#b0b0aa;">Ryan's age</div>
+      <div class="ryan-age-row">
+        <div class="ryan-stat">
+          <div class="ryan-number" id="ryan-weeks">—</div>
+          <div class="ryan-unit">weeks</div>
+        </div>
+        <div class="ryan-sep">·</div>
+        <div class="ryan-stat">
+          <div class="ryan-number" id="ryan-days">—</div>
+          <div class="ryan-unit">days</div>
+        </div>
+      </div>
+      <div class="ryan-updated" id="ryan-updated"></div>
+    </div>
+
     <div class="section-label">Tools</div>
     <div class="tool-grid">
       <div class="tool-card">
@@ -149,5 +215,14 @@
     </div>
   </div>
 
+  <script>
+    const DOB = new Date("2026-06-10");
+    const now = new Date();
+    const totalDays = Math.floor((now - DOB) / (1000 * 60 * 60 * 24));
+    document.getElementById("ryan-weeks").textContent = Math.floor(totalDays / 7);
+    document.getElementById("ryan-days").textContent = totalDays % 7;
+    document.getElementById("ryan-updated").textContent =
+      "as of " + now.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  </script>
 </body>
 </html>
