@@ -1,4 +1,4 @@
-const SUPABASE_URL = 'https://cuioycoofmfdfmtgontc.supabase.co/rest/v1/';
+const SUPABASE_URL = 'https://cuioycoofmfdfmtgontc.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN1aW95Y29vZm1mZGZtdGdvbnRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIwNDA0OTYsImV4cCI6MjA5NzYxNjQ5Nn0.FbFJYBGAkku5qJZ0xtcCBapZAnOaQGQV3x2ESDfkYL4';
 
 async function api(method, path, body) {
