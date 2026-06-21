@@ -31,18 +31,22 @@
       margin: 0 auto;
     }
 
-    .donna-wordmark {
+    .donna-headline {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      font-weight: 300;
+      color: #92aec4;
+      letter-spacing: 0.01em;
+    }
+
+    .donna-headline-name {
       font-size: 22px;
       font-weight: 300;
       color: #eaf0f6;
-      letter-spacing: 4px;
-    }
-
-    .donna-tagline {
-      font-size: 14px;
-      color: #92aec4;
-      margin-top: 6px;
-      letter-spacing: 0.01em;
+      letter-spacing: 1px;
     }
 
     .donna-body {
@@ -119,8 +123,7 @@
 
   <div class="donna-header">
     <div class="donna-header-inner">
-      <div class="donna-wordmark">Donna</div>
-      <div class="donna-tagline">I'm Donna, I know everything 😉</div>
+      <div class="donna-headline">I'm <span class="donna-headline-name" style="margin-right:-3px">Donna</span>, I know everything 😉</div>
     </div>
   </div>
 
@@ -142,7 +145,7 @@
     </div>
 
     <div class="donna-footer">
-      Donna &mdash; built for the Su Family household &bull; Updated June 2026
+      Donna &mdash; built for the Su Family &bull; Updated June 2026
     </div>
   </div>
 
